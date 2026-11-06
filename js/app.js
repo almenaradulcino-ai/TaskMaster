@@ -275,7 +275,34 @@ function escapeHTML(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+// Função para buscar dados da API de cotação
+async function buscarCotacoes() {
+  const elementoTexto = document.getElementById('cotacao-texto');
 
+  try {
+    // Faz a requisição à API
+    const resposta = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL');
+    
+    if (!resposta.ok) {
+      throw new Error('Falha na resposta da API');
+    }
+
+    const dados = await resposta.json();
+
+    // Extrai os valores formatados
+    const dolar = parseFloat(dados.USDBRL.bid).toFixed(2);
+    const euro = parseFloat(dados.EURBRL.bid).toFixed(2);
+
+    // Atualiza a interface (DOM)
+    elementoTexto.innerHTML = `<strong>USD:</strong> R$ ${dolar} | <strong>EUR:</strong> R$ ${euro}`;
+  } catch (erro) {
+    console.error('Erro ao buscar cotação:', erro);
+    elementoTexto.innerText = 'Não foi possível carregar as cotações no momento.';
+  }
+}
+
+// Executa a função assim que a página é carregada
+document.addEventListener('DOMContentLoaded', buscarCotacoes);
 // ========================================
 // INICIALIZA A APLICAÇÃO
 // ========================================
