@@ -2,449 +2,448 @@
    VARIÁVEIS DE CORES E ESPAÇAMENTO
    ======================================== */
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    --success-color: #10b981;
-    --danger-color: #ef4444;
-    --warning-color: #f59e0b;
-    --bg-dark: #0f172a;
-    --bg-light: #f8fafc;
-    --text-dark: #1e293b;
-    --text-light: #64748b;
-    --border-color: #e2e8f0;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --primary-color: #6366f1;
+  --secondary-color: #ec4899;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --bg-dark: #0f172a;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* ========================================
    RESET E ESTILOS GLOBAIS
    ======================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
-    color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: var(--text-dark);
 }
 
 /* ========================================
    CONTAINER PRINCIPAL
    ======================================== */
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    animation: slideIn 0.3s ease-out;
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========================================
    CABEÇALHO
    ======================================== */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 40px 30px;
-    text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-    font-weight: 300;
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* ========================================
+   CARD DE COTAÇÕES (AwesomeAPI)
+   ======================================== */
+.cotacao-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
+  text-align: center;
+  font-family: inherit;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.cotacao-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cotacao-card strong {
+  color: #2b8a3e; /* Verde financeiro elegante */
+  font-weight: 600;
+  background-color: rgba(43, 138, 62, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 /* ========================================
    SEÇÃO DE ENTRADA
    ======================================== */
 .input-section {
-    padding: 30px;
-    border-bottom: 1px solid var(--border-color);
+  padding: 30px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .input-group {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .task-input {
-    flex: 1;
-    padding: 14px 18px;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .task-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .task-input::placeholder {
-    color: var(--text-light);
+  color: var(--text-light);
 }
 
 /* ========================================
    BOTÕES
    ======================================== */
 .btn {
-    padding: 14px 24px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-add {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .btn-add:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 .btn-add:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .btn-clear {
-    background: var(--danger-color);
-    color: white;
-    width: 100%;
+  background: var(--danger-color);
+  color: white;
+  width: 100%;
 }
 
 .btn-clear:hover {
-    background: #dc2626;
-    transform: translateY(-2px);
+  background: #dc2626;
+  transform: translateY(-2px);
 }
 
 .btn-icon {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 1.2rem;
-    transition: all 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
 }
 
 .btn-icon:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .btn-delete {
-    color: var(--danger-color);
+  color: var(--danger-color);
 }
 
 .btn-delete:hover {
-    color: #dc2626;
+  color: #dc2626;
 }
 
 .btn-edit {
-    color: var(--warning-color);
+  color: var(--warning-color);
 }
 
 .btn-edit:hover {
-    color: #d97706;
+  color: #d97706;
 }
 
 /* ========================================
    FILTROS
    ======================================== */
 .filters {
-    display: flex;
-    gap: 10px;
-    padding: 20px 30px;
-    border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 10px;
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .filter-btn {
-    padding: 8px 16px;
-    border: 2px solid var(--border-color);
-    background: white;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    color: var(--text-light);
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--text-light);
 }
 
 .filter-btn:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .filter-btn.active {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
 }
 
 /* ========================================
    ESTATÍSTICAS
    ======================================== */
 .task-stats {
-    display: flex;
-    gap: 30px;
-    padding: 15px 30px;
-    background: var(--bg-light);
-    font-size: 0.9rem;
+  display: flex;
+  gap: 30px;
+  padding: 15px 30px;
+  background: var(--bg-light);
+  font-size: 0.9rem;
 }
 
 .stat-item {
-    color: var(--text-light);
+  color: var(--text-light);
 }
 
 .stat-item strong {
-    color: var(--primary-color);
-    font-weight: 700;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 /* ========================================
    LISTA DE TAREFAS
    ======================================== */
 .tasks-section {
-    padding: 20px 30px;
-    min-height: 200px;
+  padding: 20px 30px;
+  min-height: 200px;
 }
 
 .task-list {
-    list-style: none;
+  list-style: none;
 }
 
 .task-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    background: var(--bg-light);
-    border-radius: 10px;
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-    animation: fadeIn 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .task-item:hover {
-    background: #f1f5f9;
-    transform: translateX(5px);
+  background: #f1f5f9;
+  transform: translateX(5px);
 }
 
 .task-item.completed .task-text {
-    text-decoration: line-through;
-    color: var(--text-light);
+  text-decoration: line-through;
+  color: var(--text-light);
 }
 
 /* Checkbox customizado */
 .checkbox {
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--border-color);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: white;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
 }
 
 .checkbox:hover {
-    border-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .checkbox:checked {
-    background: var(--success-color);
-    border-color: var(--success-color);
+  background: var(--success-color);
+  border-color: var(--success-color);
 }
 
 .checkbox:checked::after {
-    content: '✓';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* Texto da tarefa */
 .task-text {
-    flex: 1;
-    font-size: 1rem;
-    color: var(--text-dark);
-    word-break: break-word;
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-dark);
+  word-break: break-word;
 }
 
 /* Ações */
 .task-actions {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 /* ========================================
    MENSAGEM VAZIA
    ======================================== */
 .empty-message {
-    text-align: center;
-    padding: 60px 30px;
-    color: var(--text-light);
+  text-align: center;
+  padding: 60px 30px;
+  color: var(--text-light);
 }
 
 .empty-message p {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
 .empty-message .text-small {
-    font-size: 0.9rem;
-    opacity: 0.7;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
 .empty-message.hidden {
-    display: none;
+  display: none;
 }
 
 /* ========================================
    RODAPÉ
    ======================================== */
 .footer {
-    padding: 20px 30px;
-    border-top: 1px solid var(--border-color);
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ========================================
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 600px) {
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-
-    .btn-add {
-        width: 100%;
-    }
-
-    .filters {
-        flex-wrap: wrap;
-    }
-
-    .task-stats {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .task-item {
-        padding: 12px;
-    }
-
-    .container {
-        border-radius: 15px;
-    }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  .btn-add {
+    width: 100%;
+  }
+  .filters {
+    flex-wrap: wrap;
+  }
+  .task-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .task-item {
+    padding: 12px;
+  }
+  .container {
+    border-radius: 15px;
+  }
 }
 
 @media (max-width: 400px) {
-    .container {
-        margin: 0;
-        border-radius: 0;
-    }
-
-    body {
-        padding: 0;
-    }
-
-    .input-section,
-    .tasks-section,
-    .filters,
-    .task-stats,
-    .footer {
-        padding: 15px 20px;
-    }
+  .container {
+    margin: 0;
+    border-radius: 0;
+  }
+  body {
+    padding: 0;
+  }
+  .input-section, .tasks-section, .filters, .task-stats, .footer {
+    padding: 15px 20px;
+  }
 }
 
 /* ========================================
    ANIMAÇÕES UTILITÁRIAS
    ======================================== */
 .fade-out {
-    animation: fadeOut 0.3s ease-out forwards;
+  animation: fadeOut 0.3s ease-out forwards;
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-       .cotacao-container {
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 10px 16px;
-  margin: 15px auto;
-  max-width: 600px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.cotacao-container span {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.cotacao-container strong {
-  color: #2b8a3e; /* Tom de verde para destacar os valores financeiros */
-}
-        opacity: 0;
-        transform: translateX(20px);
-    }
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
 }
