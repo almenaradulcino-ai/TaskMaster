@@ -307,3 +307,40 @@ document.addEventListener('DOMContentLoaded', buscarCotacoes);
 // INICIALIZA A APLICAÇÃO
 // ========================================
 init();
+// Função assíncrona para buscar as cotações na AwesomeAPI
+async function carregarCotacoesMoedas() {
+  const containerCotacao = document.querySelector('.cotacao-container span');
+
+  try {
+    // Faz a requisição HTTP GET para a API pública (sem necessidade de token ou chave)
+    const resposta = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL');
+    
+    // Verifica se a requisição foi bem-sucedida (status 200-299)
+    if (!resposta.ok) {
+      throw new Error(`Erro na rede: ${resposta.status}`);
+    }
+
+    const dados = await resposta.json();
+
+    // Extrai e formata os valores numéricos com 2 casas decimais
+    const dolar = Number(dados.USDBRL.bid).toFixed(2);
+    const euro = Number(dados.EURBRL.bid).toFixed(2);
+
+    // Atualiza o HTML dinamicamente com os dados reais
+    containerCotacao.innerHTML = `
+      💱 <strong>USD:</strong> R$ ${dolar} &nbsp;|&nbsp; <strong>EUR:</strong> R$ ${euro}
+    `;
+
+  } catch (erro) {
+    console.error('Não foi possível carregar as cotações:', erro);
+    containerCotacao.innerText = '⚠️ Indisponível no momento para carregar cotações.';
+  }
+}
+
+// Executa a função automaticamente assim que o DOM estiver totalmente carregado
+document.addEventListener('DOMContentLoaded', () => {
+  carregarCotacoesMoedas();
+  
+  // Opcional: Atualiza as cotações a cada 5 minutos automaticamente
+  setInterval(carregarCotacoesMoedas, 300000);
+});
