@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskMaster - Gerenciador de Tarefas</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster - Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Cabeçalho -->
-        <header class="header">
-            <h1>📋 TaskMaster</h1>
-            <p class="subtitle">Organize suas tarefas e seja mais produtivo</p>
-        </header>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <h1>📋 TaskMaster</h1>
+      <p class="subtitle">Organize suas tarefas e seja mais produtivo</p>
+    </header>
 
-        <!-- Seção de entrada de tarefas -->
-        <section class="input-section">
-            <div class="input-group">
-                <input 
-                    type="text" 
-                    id="taskInput" 
-                    class="task-input" 
-                    placeholder="Adicione uma nova tarefa..."
-                    autocomplete="off"
-                >
-                <button id="addBtn" class="btn btn-add">+ Adicionar</button>
-            </div>
-        </section>
-
-        <!-- Filtros -->
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">Todas</button>
-            <button class="filter-btn" data-filter="pending">Pendentes</button>
-            <button class="filter-btn" data-filter="completed">Completas</button>
-        </div>
-
-        <!-- Contador de tarefas -->
-        <div class="task-stats">
-            <span class="stat-item">
-                Total: <strong id="totalTasks">0</strong>
-            </span>
-            <span class="stat-item">
-                Completas: <strong id="completedTasks">0</strong>
-            </span>
-        </div>
-
-        <!-- Lista de tarefas -->
-        <section class="tasks-section">
-            <ul id="taskList" class="task-list">
-                <!-- As tarefas serão inseridas aqui dinamicamente -->
-            </ul>
-        </section>
-
-        <!-- Mensagem de lista vazia -->
-        <div id="emptyMessage" class="empty-message">
-            <p>Nenhuma tarefa por aqui! 🎉</p>
-            <p class="text-small">Adicione uma tarefa acima para começar</p>
-        </div>
-
-        <!-- Botão limpar completas -->
-        <div class="footer">
-            <button id="clearBtn" class="btn btn-clear">🗑️ Limpar Completas</button>
-        </div>
+    <!-- Card de Cotações da API (AwesomeAPI) -->
+    <div id="cotacao-container" class="cotacao-card">
+      <p>💰 Cotação Atual: <span id="cotacao-texto">Carregando cotações...</span></p>
     </div>
-<!-- Adicione onde desejar exibir as cotações (ex: no cabeçalho) -->
-<div id="cotacao-container" class="cotacao-card">
-  <p>💰 Cotação Atual: <span id="cotacao-texto">Carregando cotações...</span></p>
-</div>
-    
-    <!-- Script -->
-    <script src="js/app.js"></script>
+
+    <!-- Seção de entrada de tarefas -->
+    <section class="input-section">
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="taskInput" 
+          class="task-input" 
+          placeholder="Adicione uma nova tarefa..." 
+          autocomplete="off"
+        >
+        <button id="addBtn" class="btn btn-add">+ Adicionar</button>
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="pending">Pendentes</button>
+      <button class="filter-btn" data-filter="completed">Completas</button>
+    </div>
+
+    <!-- Contador de tarefas -->
+    <div class="task-stats">
+      <span class="stat-item">
+        Total: <strong id="totalTasks">0</strong>
+      </span>
+      <span class="stat-item">
+        Completas: <strong id="completedTasks">0</strong>
+      </span>
+    </div>
+
+    <!-- Lista de tarefas -->
+    <section class="tasks-section">
+      <ul id="taskList" class="task-list">
+        <!-- As tarefas serão inseridas aqui dinamicamente -->
+      </ul>
+    </section>
+
+    <!-- Mensagem de lista vazia -->
+    <div id="emptyMessage" class="empty-message">
+      <p>Nenhuma tarefa por aqui! 🎉</p>
+      <p class="text-small">Adicione uma tarefa acima para começar</p>
+    </div>
+
+    <!-- Botão limpar completas -->
+    <div class="footer">
+      <button id="clearBtn" class="btn btn-clear">🗑️ Limpar Completas</button>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script src="js/app.js"></script>
 </body>
 </html>
